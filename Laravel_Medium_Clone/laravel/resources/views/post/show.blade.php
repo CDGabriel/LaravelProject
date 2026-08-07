@@ -6,7 +6,7 @@
                     <h1 class="text-2xl mb-4">{{ $post->title }}</h1>
 
                     <!-- User Avatar -->
-                    <div class="flex gap-4">
+                    <div class="gap-4 flex">
                         <x-user-avatar :user="$post->user" />
 
                         <div>
@@ -59,7 +59,7 @@
                             <span class="px-4 py-2 bg-gray-200 rounded-2xl">{{ $post->category->name }}</span>
                         </div>
                     </div>
-                    <x-clap-button :post="$post"></x-clap-button>
+                   
                 </div>
             </div>
         </div>

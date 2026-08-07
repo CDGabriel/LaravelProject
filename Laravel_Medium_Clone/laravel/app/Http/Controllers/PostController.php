@@ -23,7 +23,10 @@ class PostController extends Controller
         $query = Post::with(['user', 'media'])->where('published_at', '<=', now())->withCount('claps')->latest();
         if ($user) {
             $ids = $user->following()->pluck('users.id');
-            $query->whereIn('user_id', $ids);
+
+            if ($ids->isNotEmpty()) {
+                $query->whereIn('user_id', $ids);
+            }
         }
         $posts = $query->simplePaginate();
 
@@ -122,7 +125,7 @@ class PostController extends Controller
             $ids = $user->following()->pluck('users.id');
             $query->whereIn('user_id', $ids);
         }
-        $posts=$query->simplePaginate(5);
+        $posts = $query->simplePaginate(5);
         return view('post.index', [
             'posts' => $posts,
         ]);

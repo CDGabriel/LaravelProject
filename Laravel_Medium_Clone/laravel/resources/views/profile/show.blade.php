@@ -15,17 +15,18 @@
                             @endforelse
                         </div>
                     </div>
-                    <x-follow-ctr :user="$user" class="block text-center gap-2">
-                        <x-user-avatar :user="$user" size="h-24 w-24" />
+                    <x-follow-ctr :user="$user" class="block text-center items-center gap-2">
+                        
+                            <x-user-avatar :user="$user" size="h-24 w-24" />
 
-                        <h3>{{ $user->name }}</h3>
-                        <p class="text-gray-500">
-                            <span x-text="followersCount"></span> Followers
-                        </p>
-                        <p>
-                            {{ $user->bio }}
-                        </p>
-
+                            <h3>{{ $user->name }}</h3>
+                            <p class="text-gray-500">
+                                <span x-text="followersCount"></span> Followers
+                            </p>
+                            <p>
+                                {{ $user->bio }}
+                            </p>
+                        
                         @if(auth()->user() && auth()->user()->id !== $user->id)
                             <div class="mt-4">
                                 <button @click="follow()" class="bg-green-600 rounded-full px-4 py-2 text-white"
