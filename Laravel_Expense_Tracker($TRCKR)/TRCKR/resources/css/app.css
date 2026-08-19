@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.js :where([class*="taos:"]:not(.taos-init)) {
+    visibility: hidden;
+}

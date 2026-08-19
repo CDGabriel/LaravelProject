@@ -119,10 +119,9 @@ if (watchLaterButton) {
       this.textContent = "✓ Added";
     }
   });
+}
 
-
-
-  function toggleAccordion(index) {
+ function toggleAccordion(index) {
     const content = document.getElementById(`content-${index}`);
     const icon = document.getElementById(`icon-${index}`);
     // Toggle the content's max-height
@@ -134,7 +133,6 @@ if (watchLaterButton) {
       icon.innerHTML = minusSVG;
     }
   }
-}
 
 if (typeof toggleAccordion === "function") {
   window.toggleAccordion = toggleAccordion;

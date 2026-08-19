@@ -28,7 +28,7 @@
                         </span>
 
                         <form action="{{ route('search') }}" method="GET" x-show="open" x-transition x-cloak
-                            class="absolute left-20 flex items-center gap-2">
+                            class="absolute left-20 flex items-center gap-2 z-100">
 
                             <input x-ref="search"
                                 x-init="$watch('open', value => value && $nextTick(() => $refs.search.focus()))"
